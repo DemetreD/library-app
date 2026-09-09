@@ -4,7 +4,7 @@ const bookTitle = document.getElementById("book-title");
 const bookAuthor = document.getElementById("book-author");
 const bookPages = document.getElementById("book-pages");
 const isBookRead = document.getElementById("is-read");
-const submitBtn = document.getElementById("submit-btn");
+const submitForm = document.querySelector(".new-book-form");
 function Book(title, author, pages, read) {
   //constructor
   if (!new.target) {
@@ -26,12 +26,12 @@ function addBookToLibrary(title, author, pages, read) {
   myLibrary.push(book);
 }
 
-submitBtn.addEventListener("click", function (e) {
+submitForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
   let book = bookTitle.value;
   let author = bookAuthor.value;
-  let pages = bookPages.value;
+  let pages = Number(bookPages.value);
   let read = isBookRead.checked;
 
   addBookToLibrary(book, author, pages, read);
