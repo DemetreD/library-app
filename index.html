@@ -9,9 +9,44 @@
   <body>
     <header>
       <h1>Library app</h1>
+      <div class="add-new-book">
+        <button
+          class="add-book-btn"
+          id="add-book-btn"
+          command="show-modal"
+          commandfor="my-dialog"
+        >
+          Add book
+        </button>
+      </div>
     </header>
     <main class="book-content" id="book-content"></main>
 
+    <dialog id="my-dialog">
+      <form action="">
+        <div class="form-group">
+          <label for="book-title">Book Title</label>
+          <input type="text" id="book-title" name="book-title" />
+        </div>
+
+        <div class="form-group">
+          <label for="book-author">Author</label>
+          <input type="text" id="book-author" name="book-author" />
+        </div>
+
+        <div class="form-group">
+          <label for="book-pages">Pages</label>
+          <input type="number" id="book-pages" name="book-pages" />
+        </div>
+
+        <div class="form-group">
+          <label for="is-read">Read</label>
+          <input type="checkbox" name="is-read" id="is-read" />
+        </div>
+      </form>
+      <button type="submit">Add Book</button>
+      <button commandfor="my-dialog" command="close">Close</button>
+    </dialog>
     <script src="./index.js"></script>
   </body>
 </html>
