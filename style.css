@@ -14,13 +14,17 @@ header {
   padding: 3rem;
 }
 
-.add-book-btn {
+.add-book-btn,
+.submit-btn {
   margin-top: 2rem;
   border: none;
   border-radius: 5px;
   padding: 0.5rem 1.25rem;
   cursor: pointer;
   background-color: burlywood;
+}
+.submit-btn {
+  margin: auto;
 }
 /* MODAL STYLES */
 .dialog {

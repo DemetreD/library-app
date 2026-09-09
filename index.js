@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 const bookContent = document.getElementById("book-content");
 const bookTitle = document.getElementById("book-title");
 const bookAuthor = document.getElementById("book-author");
@@ -38,6 +38,15 @@ submitForm.addEventListener("submit", function (e) {
   displayBook();
 });
 
+bookContent.addEventListener("click", function (e) {
+  const targetBookObj = myLibrary.filter(function (book) {
+    return e.target.dataset.id !== book.id;
+  });
+  myLibrary = targetBookObj;
+  displayBook();
+  console.log(targetBookObj);
+});
+
 function displayBook() {
   bookContent.innerHTML = "";
   myLibrary.forEach(function (book) {
@@ -47,6 +56,7 @@ function displayBook() {
         <p>${book.author}</p>
         <p>${book.pages}</p>
         <p>${book.read ? "read" : "not read"}</p>
+        <button class="remove-book-btn" data-id="${book.id}">Remove</button>
       </div>
     `;
   });
