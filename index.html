@@ -22,8 +22,8 @@
     </header>
     <main class="book-content" id="book-content"></main>
 
-    <dialog id="my-dialog">
-      <form action="">
+    <dialog id="my-dialog" class="dialog">
+      <form action="" class="new-book-form">
         <div class="form-group">
           <label for="book-title">Book Title</label>
           <input type="text" id="book-title" name="book-title" />
@@ -43,9 +43,13 @@
           <label for="is-read">Read</label>
           <input type="checkbox" name="is-read" id="is-read" />
         </div>
+        <div class="group-form">
+          <button type="submit">Add Book</button>
+        </div>
       </form>
-      <button type="submit">Add Book</button>
-      <button commandfor="my-dialog" command="close">Close</button>
+      <button commandfor="my-dialog" command="close" class="close-btn">
+        <img src="./images/close-icon.svg" alt="" class="close-icon" />
+      </button>
     </dialog>
     <script src="./index.js"></script>
   </body>
