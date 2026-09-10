@@ -26,6 +26,44 @@ header {
 .submit-btn {
   margin: auto;
 }
+
+/* CARD */
+.book-content {
+  margin: 2rem auto;
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  justify-content: center;
+  gap: 1rem;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: gainsboro;
+  padding: 1rem;
+}
+
+.card-actions button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.remove-book-btn {
+  border: 1px solid #dc2626;
+  background: transparent;
+}
+.remove-book-btn:hover {
+  background: #dc2626;
+  color: #fff;
+}
+.toggle-read {
+  background: #18181b;
+  color: #fff;
+  border: 1px solid #18181b;
+}
+.toggle-read:hover {
+  background: #27272a;
+}
+
 /* MODAL STYLES */
 .dialog {
   margin: auto;

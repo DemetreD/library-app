@@ -66,14 +66,21 @@ function displayBook() {
         <p>${book.author}</p>
         <p>${book.pages}</p>
         <p>${book.read ? "read" : "not read"}</p>
-        <button class="remove-book-btn" data-id="${book.id}">Remove</button>
-        <button class="toggle-read" data-id="${book.id}">${book.read ? "Mark as unread" : "Mark as read"}</button>
+        <div class="card-actions">
+          <button class="remove-book-btn" data-id="${book.id}">Remove</button>
+          <button class="toggle-read" data-id="${book.id}">${book.read ? "Mark as unread" : "Mark as read"}</button>
+        </div>
       </div>
     `;
   });
 }
 
-addBookToLibrary("gelas tav", "papo", 222, false);
-addBookToLibrary("Vasksa", "paaaapo", 2222, true);
+addBookToLibrary("1984", "George Owell", 328, true);
+addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
+addBookToLibrary("Dune", "Frank Herbert", 412, false);
+addBookToLibrary("Crime and Punishment", "Fyodor Dostoevsky ", 671, false);
+addBookToLibrary("The Metamorphosis", "Franz Kafka", 201, true);
+addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
+
 displayBook();
 console.log(myLibrary);
