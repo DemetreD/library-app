@@ -31,7 +31,7 @@ header {
 .book-content {
   margin: 2rem auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, 400px);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 400px));
   justify-content: center;
   gap: 1rem;
 }
