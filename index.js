@@ -75,7 +75,7 @@ function displayBook() {
   });
 }
 
-addBookToLibrary("1984", "George Owell", 328, true);
+addBookToLibrary("1984", "George Orwell", 328, true);
 addBookToLibrary("The Hobbit", "J.R.R. Tolkien", 310, true);
 addBookToLibrary("Dune", "Frank Herbert", 412, false);
 addBookToLibrary("Crime and Punishment", "Fyodor Dostoevsky ", 671, false);
@@ -83,4 +83,3 @@ addBookToLibrary("The Metamorphosis", "Franz Kafka", 201, true);
 addBookToLibrary("Meditations", "Marcus Aurelius", 304, false);
 
 displayBook();
-console.log(myLibrary);
