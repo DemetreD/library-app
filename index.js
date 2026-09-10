@@ -31,6 +31,7 @@ function addBookToLibrary(title, author, pages, read) {
 }
 
 submitForm.addEventListener("submit", function (e) {
+  const dialog = document.getElementById("my-dialog");
   e.preventDefault();
 
   let book = bookTitle.value;
@@ -40,6 +41,8 @@ submitForm.addEventListener("submit", function (e) {
 
   addBookToLibrary(book, author, pages, read);
   displayBook();
+  submitForm.reset();
+  dialog.close();
 });
 
 bookContent.addEventListener("click", function (e) {
