@@ -20,6 +20,10 @@ function Book(title, author, pages, read) {
   };
 }
 
+Book.prototype.toggleRead = function () {
+  return (this.read = !this.read);
+};
+
 function addBookToLibrary(title, author, pages, read) {
   //take params, create a book then store it in the array
   let book = new Book(title, author, pages, read);
@@ -39,12 +43,18 @@ submitForm.addEventListener("submit", function (e) {
 });
 
 bookContent.addEventListener("click", function (e) {
-  const targetBookObj = myLibrary.filter(function (book) {
-    return e.target.dataset.id !== book.id;
-  });
-  myLibrary = targetBookObj;
-  displayBook();
-  console.log(targetBookObj);
+  if (e.target.classList.contains("remove-book-btn")) {
+    const targetBookObj = myLibrary.filter(function (book) {
+      return e.target.dataset.id !== book.id;
+    });
+    myLibrary = targetBookObj;
+    displayBook();
+    console.log(targetBookObj);
+  } else if (e.target.classList.contains("toggle-read")) {
+    const bookObj = myLibrary.find((book) => book.id === e.target.dataset.id);
+    bookObj.toggleRead();
+    displayBook();
+  }
 });
 
 function displayBook() {
@@ -57,6 +67,7 @@ function displayBook() {
         <p>${book.pages}</p>
         <p>${book.read ? "read" : "not read"}</p>
         <button class="remove-book-btn" data-id="${book.id}">Remove</button>
+        <button class="toggle-read" data-id="${book.id}">${book.read ? "Mark as unread" : "Mark as read"}</button>
       </div>
     `;
   });
